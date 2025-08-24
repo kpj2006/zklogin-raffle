@@ -224,92 +224,9 @@ npm run dev
 
 Check browser console and terminal for detailed error messages.
 
-## 📊 Educational Facts
-
-The dApp includes 20+ rotating educational facts covering:
-- **Blockchain Fundamentals**: Consensus mechanisms, decentralization, immutability
-- **Sui Blockchain**: Move language, object model, parallel execution, gas optimization
-- **zkLogin Technology**: Zero-knowledge proofs, OAuth integration, privacy preservation
-- **Web3 Concepts**: DeFi protocols, NFTs, smart contract security
-
-Facts automatically rotate every 10 seconds during user interactions for continuous learning.
-
 ---
 
-**Built with ❤️ on Sui Blockchain using zkLogin Technology**
 
-### Frontend (React + TypeScript)
-```
-frontend/
-├── src/
-│   ├── components/          # UI components
-│   ├── contexts/           # React context for state management
-│   ├── services/           # zkLogin integration logic
-│   ├── config/             # Configuration and constants
-│   └── data/               # Static data (blockchain facts)
-```
-
-**Key Features:**
-- **zkLogin Service**: Complete OAuth → ZK proof → transaction flow
-- **Responsive UI**: Mobile-first design with Tailwind CSS
-- **Real-time facts**: Rotating "Did You Know?" blockchain education
-- **Smooth animations**: Framer Motion for engaging UX
-
-## Setup Guide
-
-### Prerequisites
-- Node.js 18+ and npm
-- Sui CLI installed
-- WSL2 (if on Windows)
-
-### 1. Clone and Install
-```bash
-git clone <repository>
-cd zklogin-raffle
-
-# Install frontend dependencies
-cd frontend
-npm install
-```
-
-### 2. Configure OAuth Providers
-
-#### Google OAuth Setup
-1. Go to [Google Cloud Console](https://console.cloud.google.com/)
-2. Create a new project or select existing
-3. Enable Google+ API
-4. Create OAuth 2.0 credentials
-5. Add authorized redirect URI: `http://localhost:3000/auth/callback`
-6. Copy client ID to `.env.local`
-
-#### Facebook OAuth Setup
-1. Go to [Facebook Developers](https://developers.facebook.com/)
-2. Create new app
-3. Add Facebook Login product
-4. Configure redirect URI: `http://localhost:3000/auth/callback`
-5. Copy app ID to `.env.local`
-
-### 3. Environment Configuration
-```bash
-cd frontend
-cp .env.example .env.local
-# Edit .env.local with your OAuth credentials
-```
-
-### 4. Deploy Move Contract
-```bash
-cd move
-sui client publish --gas-budget 100000000
-# Copy package ID to .env.local
-```
-
-### 5. Start Development Server
-```bash
-cd frontend
-npm run dev
-```
-
-Visit `http://localhost:3000` to see the dApp!
 
 ## User Flow
 
@@ -384,66 +301,12 @@ let mut generator = random::new_generator(random, ctx);
 let winner_index = random::generate_u64_in_range(&mut generator, 0, raffle.current_participants);
 ```
 
-## Educational Component
-
-The dApp includes a rotating "Did You Know?" section with blockchain facts:
-- **Technology**: zkLogin, Move language, parallel execution
-- **History**: Bitcoin pizza, first NFTs, smart contract origins
-- **Economics**: Gas fees, DeFi innovation, energy consumption
-- **Fun Facts**: Lost Bitcoin, crypto milestones
-
-## Security Considerations
-
-### zkLogin Security Model
-1. **2FA System**: Requires both OAuth credentials and user salt
-2. **Privacy**: Zero-knowledge proofs hide OAuth identity
-3. **Non-custodial**: No central party controls user funds
-4. **Ephemeral Keys**: Session-based keys with automatic expiry
-
-### Smart Contract Security
-1. **Access Controls**: Admin capabilities for critical functions
-2. **Validation**: Comprehensive checks for all user inputs
-3. **Reentrancy Protection**: Move's resource model prevents attacks
-4. **Upgrade Safety**: Immutable core logic with configurable parameters
-
-## Deployment
-
-### Testnet Deployment
-```bash
-# Deploy to Sui testnet
-sui client publish --gas-budget 100000000 --network testnet
-
-# Update frontend configuration
-export NEXT_PUBLIC_SUI_NETWORK=https://fullnode.testnet.sui.io
-export NEXT_PUBLIC_PACKAGE_ID=<your_package_id>
-```
-
-### Production Considerations
-1. **OAuth Production Apps**: Use production OAuth credentials
-2. **Proving Service**: Consider self-hosting for scale
-3. **Monitoring**: Add analytics and error tracking
-4. **Rate Limiting**: Implement API rate limits
-5. **Caching**: Cache ZK proofs and blockchain data
-
-## Contributing
-
-1. Fork the repository
-2. Create feature branch: `git checkout -b feature/amazing-feature`
-3. Commit changes: `git commit -m 'Add amazing feature'`
-4. Push to branch: `git push origin feature/amazing-feature`
-5. Open a Pull Request
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Acknowledgments
-
-- [Sui Foundation](https://sui.io/) for the innovative zkLogin primitive
-- [Mysten Labs](https://mystenlabs.com/) for excellent developer tools
-- [OpenID Foundation](https://openid.net/) for OAuth standards
-- Blockchain community for inspiration and education
 
 ---
 
 **Built with ❤️ for the Sui ecosystem**
+
