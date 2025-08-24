@@ -1,0 +1,27 @@
+# Move project .gitignore
+# Ignore build artifacts but keep source code
+
+# Build directory - contains all compiled bytecode and dependencies
+build/
+
+# Lock file - automatically generated during builds
+Move.lock
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Backup files
+*.bak
+*.backup
+
+# Keep these files tracked:
+# - Move.toml (project configuration)
+# - sources/ (source code)
+# - tests/ (if any test files exist)

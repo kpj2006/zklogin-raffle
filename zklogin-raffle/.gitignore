@@ -1,0 +1,60 @@
+# Root .gitignore for zkLogin Raffle dApp
+
+# Node.js / Frontend
+node_modules/
+.next/
+dist/
+build/
+out/
+.turbo/
+
+# Environment files (never commit secrets)
+.env
+.env.local
+.env.*.local
+.env.production
+.env.development
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+
+# nyc test coverage
+.nyc_output
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Move build artifacts (handled by move/.gitignore but also ignored here)
+move/build/
+move/Move.lock
+
+# Backup files
+*.bak
+*.backup
